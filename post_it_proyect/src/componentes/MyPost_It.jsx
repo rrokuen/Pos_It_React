@@ -1,6 +1,8 @@
+import React from "react";
 import { PostIt } from "./Post_It";
 import { useRef, useState } from "react";
 import { v4 as uuid } from 'uuid';
+import '../styles.css'
 
 export function MyPostIt() {
 
@@ -20,11 +22,28 @@ export function MyPostIt() {
         const importancia = importanciaRef.current.checked;
         console.log(`Se escribió ${titulo} ${descripcion} ${importancia}`);
 
-        if(titulo.trim() === ''){
-            alert('Campos vacíos');
-            
-            return;
+        if(descripcion.trim() === ''){
+            alert('Descripción obligatoria');
+
+            return
         }
+
+        const newPost = {
+            id:uuid(),
+            titulo:titulo,
+            descripcion:descripcion,
+            importancia:importancia
+        };
+
+        const newPostList = [...postList, newPost];
+        setPostList(newPostList);
+        alert('Se agregó Post-It');
+    }
+
+    function removePost(id){
+        console.log('Función eliminar');
+        const updateList = postList.filter(post => post.id !== id);
+        setPostList(updateList);
     }
 
     return (
@@ -43,22 +62,13 @@ export function MyPostIt() {
             </header>
             <main>
                 <div class="contenedor-general">
-                    <section>
-                        <div class="contenedor-post-it noImportante">
-                            <div class="contenedor-contenido ">
-                                <strong><div id="titulo-post">Ejemplo titulo<button class="btnX"><strong>x</strong></button></div></strong>
-                                <div id="descripcion-post">Ejemplo descripcion</div>
-                            </div>
-                        </div>
-                    </section>
-                    <section>
-                        <div class="contenedor-post-it importante">
-                            <div class="contenedor-contenido">
-                                <strong><div id="titulo-post">Ejemplo titulo<button class="btnX"><strong>x</strong></button></div></strong>
-                                <div id="descripcion-post">Ejemplo descripcion</div>
-                            </div>
-                        </div>
-                    </section>
+                    {postList.map(post =>(
+                        <PostIt 
+                        post={post} 
+                        removePost={removePost} 
+                        key={post.id} 
+                        className={post.importante ? 'importante' : 'noImportante'}/>
+                    ))}
                 </div>
             </main>
         </body>

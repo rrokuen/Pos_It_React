@@ -1,18 +1,23 @@
-export function PostIt({post, setImportante}) {
+import React from 'react';
+
+export function PostIt({post, removePost}) {
     const {id, titulo, descripcion, importante} = post;
 
-    const newImportante = () => setImportante(id);
-
-    const tituloPost = titulo;
-    const descripcionPost = descripcion;
-
-    if(importante){
-        return (
-            <h1>Es importante</h1>
-        )
-    }
+    const handleRemove = () => removePost(id);
 
     return (
-        <h1>No es importante</h1>
-    )
-}
+            <section>
+                <div className={`contenedor-post-it ${importante ? 'importante' : 'noImportante'}`}>
+                    <div class="contenedor-contenido">
+                            <div id="titulo-post">
+                                {titulo}
+                                <button onClick={handleRemove} className="btnX">
+                                    <strong>x</strong>
+                                </button>
+                            </div>
+                        <div id="descripcion-post">{descripcion}</div>
+                    </div>
+                </div>
+            </section>
+        )
+    }
