@@ -1,0 +1,102 @@
+body{
+    background-color: #666;
+}
+
+h1{
+    color: black;
+}
+
+header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor_header {
+    text-align: center;
+}
+
+header h1{
+    text-align: start;
+}
+
+.inpts_header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.inpts_header input,
+.inpts_header label,
+.inpts_header button {
+    margin: 5px;
+}
+
+.inpts_header label{
+    margin-left: -3px;
+}
+
+label{
+    color: white
+}
+
+.inpts_header button{
+    margin-left: 70px;
+    height: 30px;
+    width: 250px;
+    color: white;
+    background-color: black;
+}
+
+.contenedor-post-it{
+    margin: 10px;
+    height: 200px;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    width: 190px;
+}
+
+.contenedor-contenido{
+    word-wrap: break-word;
+}
+
+#inptDescripcion{
+    width: 250px;
+}
+
+#titulo-post{
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#descripcion-post{
+    line-height: 1.4;
+}
+
+.btnX{
+    background-color: transparent;
+    border: none;
+    margin-left: 70px;
+}
+
+main{
+    justify-content: center;
+    display: flex;
+}
+
+.contenedor-general{
+    margin-top: 20px;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+}
+
+.noImportante{
+    background-color: #FFFFCC;
+}
+
+.importante{
+    background-color: #EC7063;
+}
