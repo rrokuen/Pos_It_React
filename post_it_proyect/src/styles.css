@@ -75,9 +75,10 @@ label{
 }
 
 .btnX{
+    width: 10px;
     background-color: transparent;
     border: none;
-    margin-left: 70px;
+    margin-left: 180px;
 }
 
 main{

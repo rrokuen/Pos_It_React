@@ -9,11 +9,11 @@ export function PostIt({post, removePost}) {
             <section>
                 <div className={`contenedor-post-it ${importante ? 'importante' : 'noImportante'}`}>
                     <div class="contenedor-contenido">
+                        <button onClick={handleRemove} className="btnX">
+                            <strong>x</strong>
+                        </button>
                             <div id="titulo-post">
                                 {titulo}
-                                <button onClick={handleRemove} className="btnX">
-                                    <strong>x</strong>
-                                </button>
                             </div>
                         <div id="descripcion-post">{descripcion}</div>
                     </div>
