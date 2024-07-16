@@ -11,8 +11,8 @@ export function MyPostIt() {
     const importanciaRef = useRef();
 
     const [postList, setPostList] = useState([
-        {id: uuid(), titulo: "Titulo no Importante", descripcion: "Descripción no Importante", importante: false},
-        {id: uuid(), titulo: "Titulo Importante", descripcion: "Descripción Importante", importante: true}
+        {id: uuid(), titulo: "Titulo no Importante", descripcion: "Descripción no Importante", importancia: false},
+        {id: uuid(), titulo: "Titulo Importante", descripcion: "Descripción Importante", importancia: true}
     ])  
 
     function addPost() {
