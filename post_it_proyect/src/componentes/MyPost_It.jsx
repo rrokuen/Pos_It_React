@@ -67,7 +67,7 @@ export function MyPostIt() {
                         post={post} 
                         removePost={removePost} 
                         key={post.id} 
-                        className={post.importante ? 'importante' : 'noImportante'}/>
+                        className={post.importancia}/>
                     ))}
                 </div>
             </main>

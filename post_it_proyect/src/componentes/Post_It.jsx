@@ -1,13 +1,13 @@
 import React from 'react';
 
 export function PostIt({post, removePost}) {
-    const {id, titulo, descripcion, importante} = post;
+    const {id, titulo, descripcion, importancia} = post;
 
     const handleRemove = () => removePost(id);
 
     return (
             <section>
-                <div className={`contenedor-post-it ${importante ? 'importante' : 'noImportante'}`}>
+                <div className={`contenedor-post-it ${importancia ? 'importante' : 'noImportante'}`}>
                     <div class="contenedor-contenido">
                         <button onClick={handleRemove} className="btnX">
                             <strong>x</strong>
